@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,200;0,400;0,800;1,400&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="/styles/reset.css">
+    <link rel="stylesheet" href="/styles/general.css">
+    <link rel="stylesheet" href="/styles/classes.css">
+    <link rel="stylesheet" href="/styles/navbar.css">
+
+    <link href="styles/prism.css" rel="stylesheet" />
+
+    <link rel="icon" href="/images/webdev.png">
+    <title>Web Dev Guide</title>
+</head>
+<body class="line-numbers">
+    <header>
+        <a href="/"><h1> <span class="logo">&lt;?&gt;</span> Web Dev Guide <span class="logo">;</span><span class="version">v1.0.0</span></h1></a>
+    </header>
+
+    <section class="reference">
+        <nav  class="sidebar">
+            <div class="navHeading">Topics</div>
+            <ul id="navbar">
+            </ul>
+        </nav>
+        <div class="content">
+            <h2 id="pageTitle"></h2>
+            <div id="content"></div>
+            <div class="buttons">
+                <button id="previous" class="previous">Previous</button>
+                <button id="next" class="next">Next</button>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section id="guide-links" style="display: none">
+        <div class="grid grid-3col">
+            <div class="card orange clickable">
+                <h2>HTML</h2>
+                <div class="card-2col">
+                    <p><b>HyperText Markup Language.</b> The basic building blocks of websites. Defines the structure and content of a webpage, and contains additional meta information about the site.</p>
+                    <div class="begin">Start Building!</div>
+                </div>
+            </div>
+            <div class="card blue clickable">
+                <h2>CSS</h2>
+                <div class="card-2col">
+                    <p><b>Cascading Stylesheets.</b> Defines the presentation, style, and layout of websites. Used to make websites look pretty (or ugly in the wrong hands). Can also be used to create <a href="">animations</a> or transitions.</p>
+                    <div class="begin">Get Styling!</div>
+                </div>
+            </div>
+            <div class="card yellow clickable">
+                <h2>JS</h2>
+                <div class="card-2col">
+                    <p><b>JavaScript.</b> A scripting language that allows the page to change dynamically, respond to user events and actions, and generate content on the fly. This is where the magic happens.</p>
+                    <div class="begin">Begin Sorcery!</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <p>Uses <a href="https://prismjs.com/">prism.js</a> for syntax highlighing.</p>
+        <p>Copyright &copy; 2024 Max Leeming</p>
+    </footer>
+
+    <script src="scripts/prism.js"></script>
+    <script src="scripts/helper.js"></script>
+    <script src="scripts/pages.js"></script>
+    <script src="scripts/script.js"></script>
+    
+</body>
+</html>

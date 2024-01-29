@@ -1,0 +1,61 @@
+nav li {
+    background: #181818;
+    transition: background 0.15s;
+    border-bottom: 0.25em solid #070707;
+
+    list-style-type: none;
+    margin: 0;
+}
+
+
+nav li > a {
+    display: block;
+    color: white;
+    font-weight: 400;
+    padding: 0.25em 0.75em;
+    border-left: 5px solid rgba(0,0,0,0);
+    transition: padding 0.15s, border-color 0.25s, color 0.25s;
+    letter-spacing: 1px;
+    word-spacing: 3px;
+}
+nav li:hover > a {
+    border-color: (var(--blue), 100%, 50%);
+    padding-left: 1.5em;
+    color:hsl(var(--blue), 100%, 50%);
+}
+nav li:hover { 
+    background: hsl(var(--blue), 100%, 8%);
+    cursor: pointer;
+}
+nav li:first-child {
+    border-top-right-radius: 0.25em;
+    border-top-left-radius: 0.25em;
+}
+nav li:last-child {
+    border-bottom-right-radius: 0.25em;
+    border-bottom-left-radius: 0.25em;
+    border-bottom: none;
+}
+
+nav li > a.selected {
+    border-color: hsl(var(--pink), 100%, 50%);
+    color: hsl(var(--pink), 100%, 5%);
+    background: hsl(var(--pink), 100%, 50%);
+    padding-left: 1.5em;
+    font-weight: bold;
+}
+
+.navHeading {
+    font-size: 1.2em;
+    padding: 0.5em 0.5rem;
+}
+
+.error {
+    display: block;
+    width: 1em;
+    text-align: center;
+    float:right;
+    color: red;
+    background: black;
+    border-radius: 10px;
+}
