@@ -61,7 +61,7 @@ function loadPage(i) {
     <p style='text-align: center;'>Oops! Looks like there's no content here yet!</p>`
     Prism.highlightAllUnder($content)
 
-    currentPage = i
+    currentPage = parseInt(i)
 
     if (currentPage == 0) $previous.style.display = 'none'
     else $previous.style.display = 'block'

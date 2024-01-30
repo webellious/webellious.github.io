@@ -52,6 +52,9 @@
     font-family: monospace;
     letter-spacing: -2px;
 }
+.thin {
+  font-weight: 200;
+}
 .version {
   color: #555;
   font-weight: 200;

@@ -1,7 +1,26 @@
 let pages = [
     {
+        name: 'Welcome!',
+        content: `
+          <p>Hi! My name's Max, and this guide is here to help you learn about how to make websites. We'll go through it step by step, in as practical a manner as I'm capable of communicating. There'll be exercises for you to do along the way, which should help you solidify your understanding of the topics we explore.</p>
+          <p>Few things are more empowering than having your own website, and the only thing that beats having a website you like, is also having built it yourself. One of the reasons I love web development is that it allows me to do cool things, like make this very guide.</p>
+          <p>I find this ability indescribably empowering. I'm hoping I can share some of that knowledge with you!</p>
+          <p>I'll continue to update the guide as time goes on. I hope to make it as complete as I can for a beginner's exploration, covering HTML, CSS and JavaScipt. I'll also be adding more features and updating old content as I try to make it easier to grasp the concepts and better refine my style of teaching.</p>
+          <p>Good luck, and you got this!</p>
+        `
+    }, {
         name: 'Getting Started',
-        content: ``
+        content: `
+          <p>You only need two things to start making websites: a browser, and a decent text editor (preferably one designed for programming). You've got a browser (obviously, because you're reading this somehow).</p>
+          <h3>Browsers</h3>
+          <p>The one I use by default is Chrome, but that's just what I'm used to.</p>
+          <p>If you want to be a good web developer, you'll need to get comfortable using other browsers, because sometimes things look different in Chrome vs Firefox vs Opera vs Safari. </p>
+          <h3>A Good Text Editor</h3>
+          <p>As for the text editor, there are a number of options out there. My personal recommendation is <a target="_blank" href="https://code.visualstudio.com/">Visual Studio Code</a>. It's got a lot of features that make it a breeze to make websites with. I'll be using it in this guide, should it become relevant. Go ahead and either download and install it, or alternatively ensure you're set up with your preferred text editor.</p>
+          <h3>Getting Your Site Online</h3>
+          <p>Once you've made your website, you'll need to get it up online somehow, but we'll cover that down the road.</p>
+          <p>For now, let's start making stuff!</p>
+        `
     }, {
         name: 'Website File Structure',
         content: `
@@ -36,7 +55,8 @@ let pages = [
                 <p>Couple of important things to note about HTML's syntax. First, it consists of tags (sometimes called elements). These tags usually come in pairs: they have an opening tag ${code(`<body>`)}, and a closing tag ${code(`</body>`)}, with some stuff inside. Sometimes the stuff inside is text, sometimes its other tags.</p>
                 <p>A few tags, like ${code(`<meta>`)}, are what we call self closing, and don't contain anything. Instead, all the information they need is stored in the tag itself in the form of attributes. HTML attributes look something like this: ${code(`<tag name="value">`)}. For instance, in the above example, we have ${code(`<meta charset="UTF-8">`)}. ${code(`meta`)} is the tag name, ${code(`charset`)} is the name of the attribute we want to set, and ${code(`UTF-8`)} is the value we're assigning it.</p>
                 <p>Second, these pairs of tags are indented from the left in a particular way. This is to ensure we know how the tags relate to each other. We know just by looking at the above example that the ${code(`<head>`)} and ${code(`<body>`)} are in ${code(`<html>`)}, and we know that the ${code(`<meta>`)} and ${code(`<title>`)} are in the ${code(`<head>`)}, and that the ${code(`<h1>`)} and ${code(`<p>`)} are in the ${code(`<body>`)}.</p>
-                ${callout(`<p>Keeping your code organized is very important. If you lose track of the indents, it can be quite tricky to unravel how your elements relate to each other. Most text editors built for programming, like <a href='https://code.visualstudio.com/' target="_blank">Visual Studio Code</a>, have built-in auto-formatters, which you can either configure to organize your code automatically, or by using a keyboard shortcut (${code('shift + alt + f')} on Windows, ${code('shift + option + f')} on MacOS). Make liberal use of this feature, it will save you so much grief!</p>`)}
+                ${callout(`<p>Keeping your code organized is very important. If you lose track of the indents, it can be quite tricky to unravel how your elements relate to each other. Most text editors built for programming, like <a href='https://code.visualstudio.com/' target="_blank">Visual Studio Code</a>, have built-in auto-formatters.</p>
+                <p>You can usually configure these to organize your code automatically, or manually format your code with a keyboard shortcut (in VS Code it's ${code('shift + alt + f')} on Windows, ${code('shift + option + f')} on MacOS). Make liberal use of this feature, it will save you so much grief!</p>`)}
                 ${callout(`<p>Make a folder on your computer. Open a text editor and paste the code into it. Then save the file in the folder you created as <code class='language-html'>index.html</code>. Your system should recognise it as a webpage, and running the file should open it in your browser!</p> <p>It's not going to look great, but don't worry, we'll get to making it look pretty soon enough once we start playing with CSS.</p>`, 'Exercise')}
         `
     }, {
@@ -96,7 +116,7 @@ let pages = [
         name: 'Pizza Boxes and Books',
         content: ``
     }, {
-        name: 'HTML Entities',
+        name: 'Entities',
         content: `
         <p>Have you tried putting a ${code(`<`)} or a ${code(`>`)} symbol in your HTML as text? It might work, but your browser really doesn't like that. It thinks angle brackets indicate a new tag is opening up. Generally, if we want to use symbols that have a significance in HTML as text, we use Entities instead, to avoid ambiguity. We also use entities because it can be easier than pasting symbols into your code directly.</p>
         <p>Entities are special codes that get rendered as the symbols they represent. For instance, we use ${code(`&lt;`)} instead of ${code(`<`)}. When the page is rendered, the browser replaces any entities with their corresponding symbols.</p>
