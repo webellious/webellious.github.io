@@ -109,13 +109,48 @@ let pages = [
         <p>HTML can get quite complicated to look at pretty fast. One way we can keep things tidy is by using certain elements as containers to organize things.</p>
         <pre>${code(`<body>
   <h1>Welcome to my Website</h1>
-  <p>This is some text</p>
+  <h2>This is a first section.</h2>
+  <p>This is some text.</p>
+  <h2>This is a second section.</h2>
+  <p>And here we have some more text.</p>
   <p>Copyright &copy; 2024</p>
-</body>`)}</pre>`        
+</body>`)}</pre>
+        <p>It's not immediately clear what's going on here. There are a few HTML tags that we can use to group the above elements into distinct areas, for ease of readability (and later, styling).</p>
+        <p>The three I'd use here are ${code(`<header>`)}, ${code(`<section>`)} and ${code(`<footer>`)}.</p>
+        <p>The ${code(`<header>`)} is the topmost part of a page and usually contains the site's branding and navigation. You'll only have one of these on a page.</p>
+        <p>${code(`<section>`)} tags are just used to break the a page into distinct chunks of content. You can have as many of these as you like.</p>
+        <p>Finally, the ${code(`<footer>`)} contains all the stuff that traditionally goes at the bottom of the page, like credits, liscencing information, terms and conditions, and the like.</p>
+        <p>Here's what the previous example would look like with these organizing elements:</p>
+        <pre>${code(`<body>
+  <header>
+    <h1>Welcome to my Website</h1>
+  </header>
+
+  <section>
+    <h2>This is a first section.</h2>
+    <p>This is some text.</p>
+  </section>
+
+  <section>
+    <h2>This is a second section.</h2>
+    <p>And here we have some more text.</p>
+  <section>
+
+  <footer>
+    <p>Copyright &copy; 2024</p>
+  <footer>
+</body>`)}</pre>
+        <p>As you can see, the page is now clearly divided into four chunks - the header, two sections, and a footer. Again, this won't have any effect on the presentation (unless you specifically style it otherwise), but it <i>does</i> make our HTML more readable and easier to navigate.</p>
+        ${callout(`<p>There are a few others containers that we can use. The most common of these are ${code(`<div>`)} and ${code(`<span>`)}.</p>
+        <p>${code(`<div>`)} is a generic container for content. If you want to group together any collection of tags, and you don't want to provide any kind of semantic meaning, like that comes with ${code(`<footer>`)} or ${code(`<section>`)}, we can use ${code(`<div>`)}.</p>
+        <p>${code(`<span>`)} is also a generic container, but its use is specifically for text because it's an inline element. We usually use ${code(`<span>`)} to style text in paragraphs without relying on HTML formatting tags like ${code(`<b>`)} or ${code(`<i>`)}. Instead, we can style it using our own CSS, but more on that later.</p>
+        <p>You might see some other organizers in the wild like ${code(`<main>`)} and ${code(`<article>`)}, but these are rare and we don't tend to use these anymore.</p>`)}
+        ${callout(`<p>Using the site from the previous exercises, try adding in a ${code(`<header>`)}, a ${code(`<footer>`)} and some ${code(`<section>`)} tags to clarify the structure of your webpage.</p>`, 'Exercise')}
+`        
     }, {
-        name: 'Pizza Boxes and Books',
-        content: ``
-    }, {
+    //     name: 'Pizza Boxes and Books',
+    //     content: ``
+    // }, {
         name: 'Entities',
         content: `
         <p>Have you tried putting a ${code(`<`)} or a ${code(`>`)} symbol in your HTML as text? It might work, but your browser really doesn't like that. It thinks angle brackets indicate a new tag is opening up. Generally, if we want to use symbols that have a significance in HTML as text, we use Entities instead, to avoid ambiguity. We also use entities because it can be easier than pasting symbols into your code directly.</p>

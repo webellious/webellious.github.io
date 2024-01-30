@@ -133,6 +133,8 @@ footer {
 pre {
     border: 2px solid #060606 !important;
     box-shadow: none !important;
+    overflow-x: scroll;
+    max-width: 90vw !important;
 }
 
 code {
