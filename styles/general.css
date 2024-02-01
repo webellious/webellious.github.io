@@ -33,6 +33,9 @@ html {
         linear-gradient(45deg, var(--l2)) calc(var(--s)/2) calc(var(--s)/2),
         linear-gradient(-45deg, var(--l1)) var(--c2);
     background-size: calc(2*var(--s)) var(--s), var(--s) var(--s);
+
+    /* overflow-y: scroll; */
+    
 }
 
 body {
@@ -41,7 +44,6 @@ body {
     display: grid;
     grid-template-rows: auto 1fr;
     justify-items: center;
-
 }
 
 header {
@@ -70,7 +72,7 @@ h3 {
     font-size: 1.2em;
     margin: 2em 0 0.5em;
     color: hsl(var(--blue), 100%, 50%);
-    font-weight: 800;
+    font-weight: bold;
     letter-spacing: 1px;
 }
 
@@ -119,6 +121,7 @@ li {
 img {
     display: block;
     margin: 0 auto 1em;
+    max-width: 100%;
 }
 
 footer {
@@ -133,8 +136,9 @@ footer {
 pre {
     border: 2px solid #060606 !important;
     box-shadow: none !important;
-    overflow-x: scroll;
     max-width: 90vw !important;
+    width: 100% !important;
+
 }
 
 code {

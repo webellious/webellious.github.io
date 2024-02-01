@@ -1,40 +1,7 @@
-let pages = [
-    {
-        name: 'Welcome!',
-        content: `
-          <p>Hi! My name's Max, and this guide is here to help you learn about how to make websites. We'll go through it step by step, in as practical a manner as I'm capable of communicating. There'll be exercises for you to do along the way, which should help you solidify your understanding of the topics we explore.</p>
-          <p>Few things are more empowering than having your own website, and the only thing that beats having a website you like, is also having built it yourself. One of the reasons I love web development is that it allows me to do cool things, like make this very guide.</p>
-          <p>I find this ability indescribably empowering. I'm hoping I can share some of that knowledge with you!</p>
-          <p>I'll continue to update the guide as time goes on. I hope to make it as complete as I can for a beginner's exploration, covering HTML, CSS and JavaScipt. I'll also be adding more features and updating old content as I try to make it easier to grasp the concepts and better refine my style of teaching.</p>
-          <p>Good luck, and you got this!</p>
-        `
-    }, {
-        name: 'Getting Started',
-        content: `
-          <p>You only need two things to start making websites: a browser, and a decent text editor (preferably one designed for programming). You've got a browser (obviously, because you're reading this somehow).</p>
-          <h3>Browsers</h3>
-          <p>The one I use by default is Chrome, but that's just what I'm used to.</p>
-          <p>If you want to be a good web developer, you'll need to get comfortable using other browsers, because sometimes things look different in Chrome vs Firefox vs Opera vs Safari. </p>
-          <h3>A Good Text Editor</h3>
-          <p>As for the text editor, there are a number of options out there. My personal recommendation is <a target="_blank" href="https://code.visualstudio.com/">Visual Studio Code</a>. It's got a lot of features that make it a breeze to make websites with. I'll be using it in this guide, should it become relevant. Go ahead and either download and install it, or alternatively ensure you're set up with your preferred text editor.</p>
-          <h3>Getting Your Site Online</h3>
-          <p>Once you've made your website, you'll need to get it up online somehow, but we'll cover that down the road.</p>
-          <p>For now, let's start making stuff!</p>
-        `
-    }, {
-        name: 'Website File Structure',
-        content: `
-        <p>A typical website's file structure might look like this:</p>
-        <img alt='folder structure example' src="/images/folder.png">
-        <p>There's a folder for images, a folder for CSS, a folder for JavaScipt, an <code class="language-html">index.html</code> file, and an <code class="language-html">about.html</code> file. This index page is the homepage of any site. If you have other web pages, they are in their own <code class="language-html">.html</code> files, like 'about' is here. In a more complicated site, the other <code class="language-html">.html</code> files could be in subfolders.</p>
-        <h3>File Names</h3>
-        <p>It's standard to name all your files using ${code(`kebab-case`)}. That's a naming convention where the letters are always lowercase, and any spaces and symbols are replaced with dashes. Numbers are perfectly fine.</p>
-        <p>Another convention you might see is ${code(`snake_case`)}. It's the same as ${code(`kebab-case`)}, but with underscores instead of dashes.</p>
-        ${callout(`<p>The reason we name things this way is to minimize the possibility of a typo in our filenames, because if a file fails to load for whatever reason, our site breaks. Furthermore, most websites are hosted on Linux machines, which are notoriously picky about filenames. To be safe, stick to ${code(`kebab-case`)} and avoid special characters!</p>`)}`
-    }, 
-    {
-        name: 'HTML Basics',
-        content: `
+pages.push({
+    name: 'HTML Basics',
+    heading: true,
+    content: `
         <p>HTML stands for HyperText Markup Language. HTML's job is to provide the content of the web page in a structured format, as well as provide any meta information that is relevant to the web page.</p>
         <p>A simple HTML page has the following content:</p>
                 <pre>${code(`<!DOCTYPE html>
@@ -59,9 +26,9 @@ let pages = [
                 <p>You can usually configure these to organize your code automatically, or manually format your code with a keyboard shortcut (in VS Code it's ${code('shift + alt + f')} on Windows, ${code('shift + option + f')} on MacOS). Make liberal use of this feature, it will save you so much grief!</p>`)}
                 ${callout(`<p>Make a folder on your computer. Open a text editor and paste the code into it. Then save the file in the folder you created as <code class='language-html'>index.html</code>. Your system should recognise it as a webpage, and running the file should open it in your browser!</p> <p>It's not going to look great, but don't worry, we'll get to making it look pretty soon enough once we start playing with CSS.</p>`, 'Exercise')}
         `
-    }, {
-        name: 'Title & Favicon',
-        content: `
+}, {
+    name: 'Title & Favicon',
+    content: `
         <p>A typical website has a couple of notable tags in the head.</p>
         <pre>${code(`<head>
     <meta charset="UTF-8">
@@ -79,9 +46,9 @@ let pages = [
         ${callout(`<p>Using the site from the previous exercise, add a unique title and favicon. Make your site your own! I'm not much of an artist, so I just throw something together in MS Paint, but it works well enough for such a small icon.</p>`, 'Exercise')}
         </div>
         `
-    }, {
-        name: 'Text',
-        content: `
+}, {
+    name: 'Text',
+    content: `
         <p>There's a few ways that text is presented on the page.</p>
         <h3>Paragraph Tags</h3>
         <p>Most text on your webpage will be sitting in a <code class="language-html">${escapeText(`<p>`)}</code> tag, or paragraph tag.</p>
@@ -94,18 +61,18 @@ let pages = [
             <p>Start by putting in at least <b>eight</b> paragraphs. You can use placeholder text or write your own content if you want. Then sprinkle in some ${code(`<b>`)}, ${code(`<u>`)} and ${code(`<i>`)} tags for emphasis.</p>`, 'Exercise')}
 
         `
-    }, {
-        name: 'Headings',
-        content: `
+}, {
+    name: 'Headings',
+    content: `
         <p>When we want some big impressive text, we can use headings. There are six levels of heading, ranging from the mighty ${code(`<h1>`)} all the way to the totally forgotten ${code(`<h6>`)}. </p>
         <p>The ${code(`<h1>`)} is usually reserved for the name of the web page, or at least the single biggest and most important text on the page. Typically there's only one of these elements on any given web page. The text in the title bar of this website is an ${code(`<h1>`)}.</p>
         <p>${code(`<h2>`)}, ${code(`<h3>`)} and ${code(`<h4>`)} tags are relatively common. You'll see these all over the place.</p>
         <p>${code(`<h5>`)} and ${code(`<h6>`)} are quite rare. If you need to have subheadings this deep, you might want to rethink the way you've structured the content of your page - shallower is better!</p>
         ${callout(`<p>Using the site from the previous exercises, add some headings using the tags we've just explored. Put in an ${code(`<h1>`)} tag for your webpage's name. Then throw in some ${code(`<h2>`)}, ${code(`<h3>`)} and ${code(`<h4>`)} tags to break up the content of your page into sections.</p>`, 'Exercise')}
         `
-    }, {
-        name: 'Organizers',
-        content: `
+}, {
+    name: 'Organizers',
+    content: `
         <p>HTML can get quite complicated to look at pretty fast. One way we can keep things tidy is by using certain elements as containers to organize things.</p>
         <pre>${code(`<body>
   <h1>Welcome to my Website</h1>
@@ -146,13 +113,13 @@ let pages = [
         <p>${code(`<span>`)} is also a generic container, but its use is specifically for text because it's an inline element. We usually use ${code(`<span>`)} to style text in paragraphs without relying on HTML formatting tags like ${code(`<b>`)} or ${code(`<i>`)}. Instead, we can style it using our own CSS, but more on that later.</p>
         <p>You might see some other organizers in the wild like ${code(`<main>`)} and ${code(`<article>`)}, but these are rare and we don't tend to use these anymore.</p>`)}
         ${callout(`<p>Using the site from the previous exercises, try adding in a ${code(`<header>`)}, a ${code(`<footer>`)} and some ${code(`<section>`)} tags to clarify the structure of your webpage.</p>`, 'Exercise')}
-`        
-    }, {
+`
+}, {
     //     name: 'Pizza Boxes and Books',
     //     content: ``
     // }, {
-        name: 'Entities',
-        content: `
+    name: 'Entities',
+    content: `
         <p>Have you tried putting a ${code(`<`)} or a ${code(`>`)} symbol in your HTML as text? It might work, but your browser really doesn't like that. It thinks angle brackets indicate a new tag is opening up. Generally, if we want to use symbols that have a significance in HTML as text, we use Entities instead, to avoid ambiguity. We also use entities because it can be easier than pasting symbols into your code directly.</p>
         <p>Entities are special codes that get rendered as the symbols they represent. For instance, we use ${code(`&lt;`)} instead of ${code(`<`)}. When the page is rendered, the browser replaces any entities with their corresponding symbols.</p>
         <p>Here are a few common entities you might find out in the wild, or want to use.</p>
@@ -175,63 +142,32 @@ let pages = [
         ${callout(`<p>Using the site from the previous exercises, sprinkle some of these entities into your HTML to get familiar with using them and how they behave.</p>
         <p>For the ${code(`&nbsp;`)} entities, try shrinking and expanding the browser to see how phrases with them instead of regular spaces behaves when the line its on runs out of room.</p>`, 'Exercise')}
         `
-    }, {
-        name: 'CSS Basics',
-        content: `
-        <p>We've been dealing purely with stucture and content, but how do we change the look of things?</p>
-        <p>That's what CSS is for. CSS stands for Cascading StyleSheets, and it's another language that exists to define a set of rules that govern how the browser should render HTML elements.</p>
-        <h3>CSS Syntax</h3>
-        <p>CSS typically looks like this:</p>
-        <pre>${code(`body {
-  background: black;
-  color: white;
-}`, 'css')}</pre>
-        <p>Line 1 describes a 'selector', which references a particular type of html element, or a group of elements. Here, the selector is ${code('body')}, which refers to any ${code('<body>')} tag. There's only ever one ${code('<body>')} tag in an HTML page though, so in this case it's referring to that one.</p>
-        <p>Inside the curly braces, we have the rules we want to apply. Like HTML attributes, they come in pairs: a name and a value. Here, we're setting the background colour to black, and the text colour to white.</p>
-        <h3>Cascading Styles</h3>
-        <p>The power of CSS is that, these rules can apply not only to the content directly in the elements that match this selector, but to <i>any elements inside them too</i>. Hence, setting the colour to white on the body changes the colour of all text on the page.</p>
-        <p>Not all rules cascade; some only apply to the element that matches the selector. But anything to do with text does cascade.</p>`
-    }, {
-        name: 'Adding CSS',
-        content: `
-        <p>There are three main ways we can add CSS to a page, which we'll explore here.</p>
-        <h3>Inline CSS</h3>
-        <p>The most direct way we can add styles to an HTML element is by putting the style in the tag. This is called inline CSS because it's put directly in the HTML. It looks like this:</p>
+}, {
+    name: 'Links',
+    content: `
+        <p>We can set up links to other web pages with the ${code(`<a>`)} tag, or anchor tag.</p> 
+        <p>Here is an <a href="https://en.wikipedia.org/wiki/Axolotl" target="_blank">example</a>. And here's the code for that example:</p>
+        <pre class='no-line-numbers'>${code(`<p>Here is an <a href="https://en.wikipedia.org/wiki/Axolotl" target="_blank">example</a>.</p>`)}</pre>
+        <p>${code(`<a>`)} tags need an href to be used. The href is just the URL of the page or file you are linking. </p>
+        <p>${code(`<a>`)} tags are inline elements, which means they are assumed to be used in text. However, it's common to use them to make entire chunks of content linkable. For instance, you might have a card with an image, heading and text on it that you want to use as button to take you to an article. In this case, we'd have the HTML for the image, button, and text all inside an ${code(`<a>`)} tag, making everything a link to the page.</p>
+        <p>If you want a link to another page on your website, you can simply use the relative path to that .html file. For instance, if you have an ${code(`index.html`)} and an ${code(`about.html`)}, and you wanted a link in index to about, you'd only need to write ${code(`<a href="about.html">`)}. Naturally, if it's in a folder, you'd need to include that too.</p>
+        <h3>Target</h3>
+        <p>Another attribute you can add to ${code(`<a>`)} tags is target. Target is used to specify if the link should open a new tab or not. By default, links will just change the current tab you have open, but if you put ${code(`<a target="_blank">`)}, it will open in a new tab, as exhibited in the above example.</p> <p>It's very common to do this for links to external websites - that is, links that would take the user away from your website. </p>
+        ${callout(`<p>Using the site from the previous exercises, try including some links to other websites.</p>
+        <p>For extra practice, create another HTML file, and create links from one to the other and back again.</p>`, 'Exercise')}
+        `
+}, {
+    name: 'Images',
+    content: `
+        <p>We can put images in our websites with ${code(`<img>`)}, or the image tag. It usually looks something like this:</p>
         <pre>${code(`<body>
-  <p style="color: red;">This text will show as red.</p>
+    <img href="/images/cat.jpeg" alt="Cat eats a tiny burrito.">
+    <p>Here is a picture of a cat enjoying her birthday dinner.</p>
 </body>`)}</pre>
-        <p>Inline CSS is not the preferred way to add styling. It wouldn't be wrong to describe it as... pretty gross. It's powerful, but generally we want our styles to be all in one place, which leads us to the second way of adding styles...</p>
-        <h3>Internal CSS</h3>
-        <p>We can add styles to the page by putting them in a ${code(`<style>`)} tag in the ${code(`<head>`)}.</p>
-        <pre>${code(`<head>
-  <style>
-    body {
-      background: black;
-      color: white;
-    }
-  </style>
-</head>`)}</pre>
-        <p>Internal CSS is better than inline CSS, because it's all grouped together in one place, which is nice. The problem is that styles can get out of hand and balloon pretty quickly. It would be best if we could put them in a seperate file altogether...</p>
-        <h3>External CSS</h3>
-        <p>The ideal way to add CSS to a page is to use external CSS. External means that it's not in the HTML file. Instead it's in a seperate ${code(`.css`)} file, usually located in a ${code(`/styles`)} folder. To link the file, we need to put a ${code(`<link>`)} tag in the ${code(`.<head>`)} of the HTML file, and we need to tell it how the link relates to the HTML (it's a stylesheet), and where the CSS file is relative to the HTML file (in the styles folder in a file called ${code(`styles.css`)}).</p>
-        <pre>${code(`<head>
-  <link rel='stylesheet' href='/styles/style.css'>
-</head>`)}</pre>
-        <p>Then in the .css file, we'll put our styles, like this:</p>
-        <pre>${code(`body {
-  background: black;
-  color: white;
-}`, 'css')}</pre>
+        <p>A few things to note about images. First, there's no closing tag - it's self closing. Images are not containers, in the way that most other elements are. They display the image, and that's it.</p>
+        <p>Second, it's got two attributes. Href is the url to the image you want to display. Usually this is a relative filepath from the .html file to the image file. The alt attribute is used to provide fallback text should the image fail to be displayed, and as a description for the image for folks experiencing your site through a screen reader.</p>
+        <p>As mentioned previously, images are usually stored in a folder, to keep things organized. So most of the the time, the href will be something to the effect of ${code(`/images/dog-playing-violin.png`)}.</p>
+
+        ${callout(`<p>Add a couple of images to your website. Make a folder for the files, and find some nice pictures to put on your site.</p>`, 'Exercise')}
         `
-    }, {
-        name: 'Adding Fonts',
-        content: `
-        <p>One way we can really make our site feel unique is by adding unique fonts. A few services exist that make this process convenient. <a href='https://fonts.google.com/'>Google Fonts</a> is my preferred one.</p>
-        `
-    }, {
-        name: 'To Be Continued...',
-        content: `
-        <p>That's it for the content currently up here, but I'll be adding more as time goes on. In the meantime, you might <a href='https://youtu.be/DwPWGUhEtP0?si=lmlU_ZsYEFWZc7ce'>enjoy this</a>.</p>
-        `
-    },
-]
+})

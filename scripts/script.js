@@ -41,8 +41,10 @@ $navbar.addEventListener('click', (e) => {
 
 for (let i = 0; i < pages.length; i++) {
     let error = ''
+    let heading = ''
     if (pages[i].content == '') error = `<span class='error'>!</span>`
-    $navbar.innerHTML += `<li><a id='id-${i}' class='navLink' data-page='${i}'>${pages[i].name + error}</a></li>`
+    if (pages[i].heading) heading = 'class="moduleHeading"'
+    $navbar.innerHTML += `<li ${heading}><a id='id-${i}' class='navLink' data-page='${i}'>${pages[i].name + error}</a></li>`
 }
 
 let currentPage = 0
